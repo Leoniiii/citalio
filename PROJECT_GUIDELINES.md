@@ -1,14 +1,14 @@
 # 📋 CITALIO - Guía del Proyecto
 
 ## 🎯 Visión General
-Sistema de gestión de reservas online para pequeños negocios de servicios (peluquerías, masajistas, entrenadores personales, estéticas, fisioterapeutas, coaches, etc.).
+Sistema de gestión de citas y calendario para pequeños negocios de servicios (peluquerías, masajistas, entrenadores personales, estéticas, fisioterapeutas, coaches, etc.). Los profesionales crean y gestionan internamente las citas de sus clientes.
 
 ---
 
 ## 🔴 Problema que Resuelve
-- **Pain point:** Pequeños negocios usando WhatsApp/Instagram para reservas
-- **Solución:** Plataforma profesional de agenda + reservas + pagos + recordatorios
-- **Target:** Negocios con poco conocimiento técnico
+- **Pain point:** Pequeños negocios usando papel, Excel o WhatsApp para gestionar citas
+- **Solución:** Plataforma profesional de agenda + citas + pagos + notificaciones
+- **Target:** Negocios con poco conocimiento técnico que necesitan organizar sus citas de forma profesional
 
 ---
 
@@ -45,15 +45,14 @@ Cada negocio puede crear sus servicios:
 
 💡 *Angular brilla aquí.*
 
-### 4️⃣ Reservas Online (Cliente Final)
-El negocio tiene link público: `citalio.com/peluqueria-juan`
-
-Cliente final puede:
-- [ ] Ver servicios
-- [ ] Elegir día y hora
-- [ ] Introducir nombre + email + teléfono
-- [ ] Confirmar reserva
-- ❌ Sin necesidad de crear cuenta
+### 4️⃣ Gestión de Citas (Creación Manual por Profesional)
+El profesional crea las citas manualmente en el calendario:
+- [ ] Añadir cita especificando cliente (nombre, teléfono, email)
+- [ ] Seleccionar duración en minutos
+- [ ] Asignar servicio a la cita
+- [ ] Registrar estado de pago (pagada/pendiente)
+- [ ] Editar o cancelar citas según sea necesario
+- [ ] Vista en calendario (día/semana) con citas bloqueadas por horario
 
 ### 5️⃣ Estados de la Reserva
 - [ ] Pendiente
@@ -112,14 +111,15 @@ Dashboard con:
 - Guards para auth
 - Lazy loading por módulos
 
-### ⚙ Backend - Next.js (API)
-✔ Buena elección, especialmente si:
-- Usas API Routes o App Router
-- Haces backend + landing en el mismo proyecto
+### ⚙ Backend - NestJS (API)
+✔ Excelente elección para:
+- Arquitectura escalable y robusta
+- Proyectos empresariales
+- Inyección de dependencias
 
 **Funcionalidades:**
-- Auth (JWT recomendado)
-- CRUD de reservas
+- Auth (JWT)
+- CRUD de citas
 - Gestión de usuarios
 - Webhooks de Stripe
 - Envío de emails
@@ -149,7 +149,7 @@ Dashboard con:
 - **Stripe** (webhooks bien controlados)
 
 ### ☁ Infraestructura
-- **Vercel** (Next.js)
+- **Railway / Heroku / AWS** (NestJS)
 - **Railway / Supabase / Neon** (DB)
 - **Cloudinary** (imágenes)
 
@@ -160,7 +160,7 @@ Dashboard con:
 ```
 Angular Dashboard + Booking UI
         ↓
-Next.js API (Auth, lógica negocio)
+NestJS API (Auth, lógica negocio)
         ↓
 PostgreSQL + Prisma
 ```
@@ -216,7 +216,7 @@ Esto hace que cada feature tenga sentido económico.
 ## 🚀 Próximos Pasos Inmediatos
 
 - [ ] Definir modelo de BD exacto (Prisma schema)
-- [ ] Empezar con Next.js backend
+- [ ] Empezar con NestJS backend
 - [ ] Estructura de carpetas Angular
 - [ ] Setup de JWT auth
 
