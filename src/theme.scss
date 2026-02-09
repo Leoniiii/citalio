@@ -1,0 +1,51 @@
+// Citalio Theme - Angular Material v21 (Material Design 3)
+@use '@angular/material' as mat;
+@use '_theme-colors' as colors;
+
+// Apply custom Citalio theme
+// Primary: #3B82F6 (Blue), Secondary: #10B981 (Green)
+
+html {
+  color-scheme: light dark;
+  @include mat.theme((
+    color: (
+      primary: colors.$primary-palette,
+      tertiary: colors.$secondary-palette,
+    ),
+    density: 0
+  ), $overrides: (
+    primary: #3B82F6,
+    tertiary: #10B981,
+  ));
+}
+
+// ===========================
+// 🎨 ESTILOS GLOBALES
+// ===========================
+
+body {
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// Scrollbar personalizado
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mat-sys-surface-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mat-sys-primary);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--mat-sys-primary-container);
+  }
+}

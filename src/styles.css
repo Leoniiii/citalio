@@ -1,3 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* ===== Tailwind CSS ===== */
 @import "tailwindcss";
+
+/* ===== Global Styles for Citalio ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F3F4F6;
+  color: #111827;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --citalio-blue: #3B82F6;
+  --citalio-blue-dark: #1E40AF;
+  --citalio-blue-light: #DBEAFE;
+  --citalio-green: #10B981;
+  --citalio-green-light: #D1FAE5;
+  --citalio-orange: #F59E0B;
+  --citalio-red: #EF4444;
+  --citalio-dark: #111827;
+  --citalio-medium: #F3F4F6;
+  --citalio-white: #FFFFFF;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--citalio-medium);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--citalio-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--citalio-blue-dark);
+}
+
+/* Focus visible para accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--citalio-blue);
+  outline-offset: 2px;
+}
+
+/* Angular Material - override de colores */
+.mat-mdc-button.mat-primary,
+.mat-mdc-raised-button.mat-primary {
+  --mdc-theme-primary: var(--citalio-blue);
+}
+
+.mat-mdc-button.mat-accent,
+.mat-mdc-raised-button.mat-accent {
+  --mdc-theme-primary: var(--citalio-green);
+}
+
+.mat-mdc-button.mat-warn,
+.mat-mdc-raised-button.mat-warn {
+  --mdc-theme-primary: var(--citalio-red);
+}
